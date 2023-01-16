@@ -1,4 +1,4 @@
-#  Exploratory Data Analysis (EDA) of financial data
+# Exploratory Data Analysis (EDA) of financial data
 
 ## Load packages
 
