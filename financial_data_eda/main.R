@@ -8,7 +8,7 @@ library(ggplot2)
 
 ## Load Paralellization
 
-cl <- cl <- makePSOCKcluster(8)
+cl <- makePSOCKcluster(8)
 registerDoParallel(cl)
 
 ## Load data
@@ -57,20 +57,6 @@ h
 
 ggsave("financial_data_eda/histogram.svg")
 
-## Boxplot
-
-b <- ggplot(data = nflx_data, aes(x = Date, y = Adj.Close, group = Date)) +
-    geom_boxplot() +
-    labs(
-        x = "Year",
-        y = "Adj.Close"
-    ) +
-    theme(axis.title = element_text(face = "bold")) +
-    scale_x_date(breaks = "2023")
-
-b
-
-ggsave("financial_data_eda/boxplot.svg")
 
 ## Stop Paralellization
 
