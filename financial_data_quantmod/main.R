@@ -17,8 +17,7 @@ getSymbols("NFLX")
 ## Standard financial chart
 
 chartSeries(NFLX,
-    type = "auto",
-    line.type = "s"
+    type = "auto"
 )
 
 ## Stop Parallelization
