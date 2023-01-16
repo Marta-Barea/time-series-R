@@ -13,10 +13,10 @@ registerDoParallel(cl)
 
 ## Load data
 
-apple_data <- read.csv("data/AAPL.csv", stringsAsFactors = FALSE)
-tesla_data <- read.csv("data/TSLA.csv", stringsAsFactors = FALSE)
-amzn_data <- read.csv("data/AMZN.csv", stringsAsFactors = FALSE)
-google_data <- read.csv("data/GOOGL.csv", stringsAsFactors = FALSE)
+apple_data <- read.csv("financial_data/data/AAPL.csv", stringsAsFactors = FALSE)
+tesla_data <- read.csv("financial_data/data/TSLA.csv", stringsAsFactors = FALSE)
+amzn_data <- read.csv("financial_data/data/AMZN.csv", stringsAsFactors = FALSE)
+google_data <- read.csv("financial_data/data/GOOGL.csv", stringsAsFactors = FALSE)
 
 ## Prepare data
 
@@ -44,7 +44,7 @@ p <- ggplot(data = apple_data, aes(x = Date, y = Close)) +
         breaks = c("Apple", "Tesla", "Amazon", "Google"),
         values = c("grey", "red", "orange", "blue")
     ) +
-    scale_x_date(breaks = "1 years") +
+    scale_x_date(breaks = "1 year") +
     theme(axis.title = element_text(face = "bold"))
 
 p
