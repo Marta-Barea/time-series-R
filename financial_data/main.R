@@ -49,7 +49,7 @@ p <- ggplot(data = apple_data, aes(x = Date, y = Close)) +
 
 p
 
-ggsave("plot.svg")
+ggsave("financial_data/plot.svg")
 
 ## Stop Parallelization
 
