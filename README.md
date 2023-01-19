@@ -1,3 +1,3 @@
 # time-series-R
  
-Initialization to time series using R programming language.
+Time Series Analysis and Forecasting with R.
