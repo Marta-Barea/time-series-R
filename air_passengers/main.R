@@ -49,6 +49,36 @@ p1
 
 # ggsave("air_passengers/ts_plot.svg")
 
+## Time serie decomposition: multiplicative classical decompostion
+
+ap_decompose <- decompose(ap_data, type = "multiplicative")
+
+p2 <- autoplot(ap_decompose) +
+    theme(
+        axis.title = element_text(
+            face = "bold"
+        ),
+        title = element_text(
+            face = "bold"
+        ),
+        strip.background = element_rect(
+            fill = "purple"
+        ),
+        strip.text = element_text(
+            color = "white"
+        )
+    ) +
+    labs(
+        x = "Year",
+        y = "Passengers (1000s)"
+    )
+
+p2
+
+# ggsave("air_passengers/ts_decomposition.svg")
+
+## Seasonality analysis
+
 ## Boxplot
 
 boxplot(ap_data ~ cycle(ap_data),
@@ -69,7 +99,7 @@ par(new = TRUE)
 
 # svg("air_passengers/boxplot.svg")
 
-p2 <- boxplot(ap_data ~ cycle(ap_data),
+p3 <- boxplot(ap_data ~ cycle(ap_data),
     xlab = expression(bold("Months")),
     ylab = expression(bold("Passengers (1000s)")),
     main = "Monthly Air Passengers Boxplot from 1949 to 1960",
@@ -77,37 +107,13 @@ p2 <- boxplot(ap_data ~ cycle(ap_data),
     whislty = 2,
 )
 
-p2
+p3
 
 # dev.off()
 
-## Time serie decomposition: multiplicative classical decompostion
+## Correlation analysis
 
-ap_decompose <- decompose(ap_data, type = "multiplicative")
 
-p3 <- autoplot(ap_decompose) +
-    theme(
-        axis.title = element_text(
-            face = "bold"
-        ),
-        title = element_text(
-            face = "bold"
-        ),
-        strip.background = element_rect(
-            fill = "purple"
-        ),
-        strip.text = element_text(
-            color = "white"
-        )
-    ) +
-    labs(
-        x = "Year",
-        y = "Passengers (1000s)"
-    )
-
-p3
-
-# ggsave("air_passengers/ts_decomposition.svg")
 
 ## Stop Parallelization
 
