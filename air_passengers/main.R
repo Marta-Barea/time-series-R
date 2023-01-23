@@ -113,7 +113,31 @@ p3
 
 ## Correlation analysis
 
+## Autocorrelation function (ACF)
 
+ci2 <- qnorm((1 + .95) / 2) / sqrt(length(rnorm(ap_data)))
+
+p4 <- ggAcf(ap_data) +
+    theme(
+        axis.title = element_text(
+            face = "bold"
+        ),
+        title = element_text(
+            face = "bold"
+        )
+    ) +
+    labs(
+        title = "Autocorrelation Function (ACF) Plot"
+    ) +
+    geom_hline(
+        yintercept = c(ci2, -ci2),
+        color = "purple",
+        linetype = "dashed"
+    )
+
+p4
+
+# ggsave("air_passengers/acf_plot.svg")
 
 ## Stop Parallelization
 
