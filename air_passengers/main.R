@@ -115,7 +115,7 @@ p3
 
 ## Autocorrelation function (ACF)
 
-ci2 <- qnorm((1 + .95) / 2) / sqrt(length(rnorm(ap_data)))
+ci2 <- qnorm((1 + .95) / 2) / sqrt(length(ap_data))
 
 p4 <- ggAcf(ap_data) +
     theme(
