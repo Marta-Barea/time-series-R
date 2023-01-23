@@ -5,6 +5,7 @@
 library(doParallel)
 library(forecast)
 library(fpp2)
+library(TSstudio)
 
 ## Load Parallelization
 
@@ -18,7 +19,7 @@ ap_data <- AirPassengers
 
 ## Inspect data
 
-class(ap_data)
+ts_info(AirPassengers)
 ap_data
 anyNA(ap_data)
 
